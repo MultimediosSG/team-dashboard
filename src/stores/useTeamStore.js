@@ -18,6 +18,9 @@ export const useTeamStore = defineStore('team', () => {
        spots.value =  resp.default.spots;
        members.push(...resp.default.members);
     }
+    async function add(data) {
+        members.push(data);
+    }
 
-    return { spots, name, members, init, spotsRemaining }
+    return { spots, name, members, init, spotsRemaining, add }
 })
